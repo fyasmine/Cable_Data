@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="916.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="590.0" prefWidth="928.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#90e9ff" height="890.0" layoutX="380.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="594.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dec1ff" height="890.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="594.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bdff9e" height="890.0" layoutX="493.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="174.0" />
+            <Ellipse fill="#717171" layoutX="659.0" layoutY="206.0" radiusX="100.0" radiusY="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#717171" height="532.0" layoutX="64.0" layoutY="202.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="857.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fdffe1" height="482.0" layoutX="617.0" layoutY="227.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="282.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="482.0" layoutX="93.0" layoutY="227.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="506.0" />
+            <BarChart fx:id="graph" layoutX="86.0" layoutY="243.0">
+              <xAxis>
+                <CategoryAxis animated="false" side="BOTTOM" fx:id="xAxis" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" label="Number of Viewers" side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <Button fx:id="calculate" layoutX="809.0" layoutY="414.0" mnemonicParsing="false" onMouseClicked="#calculate" text="Add Data" />
+            <ChoiceBox fx:id="genre" layoutX="737.0" layoutY="287.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="city" layoutX="737.0" layoutY="248.0" prefWidth="150.0" />
+            <Label layoutX="625.0" layoutY="252.0" text="City" />
+            <Label layoutX="625.0" layoutY="291.0" text="Genre" />
+            <Label layoutX="625.0" layoutY="330.0" text="Calculation Type" />
+            <Label fx:id="title" alignment="CENTER" layoutX="118.0" prefHeight="63.0" prefWidth="749.0" text="Viewer Statistics">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button layoutX="821.0" layoutY="665.0" mnemonicParsing="false" onMouseClicked="#exit" prefHeight="26.0" prefWidth="65.0" text="Exit" />
+            <Button fx:id="clear" layoutX="805.0" layoutY="447.0" mnemonicParsing="false" onMouseClicked="#clear" text="Clear Data" />
+            <RadioButton fx:id="totals" layoutX="650.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#totals" text="Totals" />
+            <RadioButton fx:id="averages" layoutX="650.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#averages" text="Averages" />
+            <Polygon fill="#717171" layoutX="727.0" layoutY="793.0" points="60.20001220703125, 56.800048828125, 36.39996337890625, -59.99993896484375, -42.0, -59.9998779296875" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Polygon fill="#717171" layoutX="273.0" layoutY="793.0" points="-61.39996337890625, 54.4000244140625, 36.39996337890625, -59.99993896484375, -42.0, -59.9998779296875" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Polygon fill="#717171" layoutX="573.0" layoutY="139.0" points="34.0, 40.0, 50.0, 40.0, -20.5999755859375, -95.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Polygon fill="#717171" layoutX="651.0" layoutY="140.0" points="34.0, 40.0, 50.0, 40.0, 114.79998779296875, -92.59999084472656" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="172.0" layoutX="628.0" layoutY="488.0" stroke="BLACK" strokeType="INSIDE" width="258.0" />
+            <Label fx:id="instructions" layoutX="635.0" layoutY="492.0" prefHeight="165.0" prefWidth="244.0" text="Display viewer statistics using the options above." wrapText="true" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
